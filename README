@@ -1,0 +1,16 @@
+
+
+Namespaces: Create or update namespaces to isolate resources within the cluster.
+Custom Resource Definitions (CRDs): Create or update custom resource definitions, if applicable.
+Secrets and ConfigMaps: Create or update secrets and ConfigMaps, which are used to store sensitive data and configuration information.
+Persistent Volume Claims (PVCs): Create or update PVCs to request storage resources.
+Services: Create or update services to provide stable endpoints for pods.
+Pods: Create or update pods to run your applications.
+Deployments, ReplicaSets or ReplicationControllers: Create or update deployments, ReplicaSets, or ReplicationControllers to manage the desired state of pods.
+StatefulSets: Create or update StatefulSets to manage stateful applications.
+DaemonSets: Create or update DaemonSets to run a copy of a pod on every node or a subset of nodes.
+Jobs: Create or update Jobs to run pods for completing a specific task.
+CronJobs: Create or update CronJobs to run a job at a specific time.
+It's important to keep in mind that some resources may have dependencies on others, such as a pod depending on a PVC for storage. Therefore, it's always a good practice to first create the resources that other resources depend on before creating the dependent resources.
+
+Also when updating resources, you should be aware of the order of update, it's always safer to update a resource that has a lower dependency first, and then updating the resources that depend on it.

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: config-server
+spec:
+  serviceName: config-server
+  replicas: 3
+  selector:
+    matchLabels:
+      app: config-server
+  template:
+    metadata:
+      labels:
+        app: config-server
+    spec:
+      containers:
+        - name: config-server
+          image: 172.104.253.95:8095/mobigrow/com.wati.config.server:latest
+          ports:
+            - containerPort: 8101
